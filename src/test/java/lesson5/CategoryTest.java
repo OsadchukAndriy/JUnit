@@ -8,6 +8,6 @@ import org.junit.runners.Suite;
 @RunWith(Categories.class)
 @Suite.SuiteClasses({IntegrationTest.class, ModuleTest.class})
 public class CategoryTest {
-    
+
 
 }

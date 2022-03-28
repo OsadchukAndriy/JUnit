@@ -1,33 +1,36 @@
 package lesson4;
 
-import org.junit.AfterClass;
-import org.junit.BeforeClass;
+
 import org.junit.FixMethodOrder;
-import org.junit.Test;
+import org.junit.jupiter.api.*;
 import org.junit.runners.MethodSorters;
 
 import static org.junit.Assert.*;
-@FixMethodOrder(MethodSorters.NAME_ASCENDING)
+//@FixMethodOrder(MethodSorters.NAME_ASCENDING)
+@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class OrderExampleTest {
-    @BeforeClass
-    public static void beforeClass(){
+    @BeforeAll
+     static void beforeClass(){
         System.out.println("Before OrderExampleTest.class");
     }
-    @AfterClass
-    public static void afterClass(){
+    @AfterAll
+     static void afterClass(){
         System.out.println("After OrderExampleTest.class");
     }
 
     @Test
-    public void firstTest(){
+    @Order(1)
+     void firstTest(){
         OrderExample.printDetail("firstTest");
     }
     @Test
-    public void test(){
+    @Order(2)
+     void test(){
         OrderExample.printDetail("test");
     }
     @Test
-    public void secondTest(){
+    @Order(3)
+     void secondTest(){
         OrderExample.printDetail("secondTest");
     }
 
